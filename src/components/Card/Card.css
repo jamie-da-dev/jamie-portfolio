@@ -1,0 +1,78 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  background-color: var(--background-color);
+  height: 100vh;
+}
+
+.container {
+  width: 450px;
+  height: 250px;
+  transition: all 0.1s;
+  position: relative;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  width: 450px;
+  height: 250px;
+  transition: all 0.1s;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.card {
+  background-color: rgb(27, 27, 27);
+  width: 450px;
+  height: 250px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.card-logo {
+  width: 40%;
+  height: 55%;
+  border-right: 3px solid rgb(189, 203, 220);
+}
+
+.card-logo img {
+  width: 75px;
+  height: 75px;
+  border-radius: 5px;
+}
+
+.card-contents {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 40px;
+  font-family: var(--font-family);
+}
+
+.card-contents * {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.card-contents-name {
+  color: var(--highlight-color);
+  font-size: 27px;
+}
+
+.card-contents-role {
+  color: var(--subtext-color);
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.card-contents-icons {
+  margin-right: 10px;
+}
