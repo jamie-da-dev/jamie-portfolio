@@ -10,10 +10,11 @@ const Card: React.FC = () => {
   const overlayRef = useRef<HTMLDivElement>(null);
 
   const [scale, setScale] = useState(1);
-  const [color, setColor] = useState(24); //Original Background Color is rgb(24, 24, 24).
+  const [color, setColor] = useState(40); //Original Background Color is rgb(40, 40, 40).
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!containerRef.current || !overlayRef.current) return;
+    if (!containerRef.current || !overlayRef.current || !backgroundRef.current)
+      return;
 
     const rect = containerRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -33,11 +34,18 @@ const Card: React.FC = () => {
     overlayRef.current.style.transition = "all 0.1s";
   };
 
-  const handleMouseOut = () => {
+  const handleMouseEnter = () => {
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleMouseLeave = () => {
+    console.log("Out");
     if (!overlayRef.current || !containerRef.current) return;
 
+    document.body.style.overflow = "auto";
+
     overlayRef.current.style.filter = "opacity(0)";
-    containerRef.current.style.scale = containerRef.current.style.transform =
+    containerRef.current.style.transform =
       "perspective(350px) rotateY(0deg) rotateX(0deg)";
     containerRef.current.style.transition = "transform 0.5s";
     overlayRef.current.style.transition = "all 0.5s";
@@ -50,7 +58,7 @@ const Card: React.FC = () => {
 
     const scrollY = window.scrollY;
     const newScale = Math.max(0, 1 - scrollY / 1000);
-    const backgroundColor = Math.max(0, 24 - scrollY / 50);
+    const backgroundColor = Math.max(0, 40 - scrollY / 35);
 
     setColor(backgroundColor);
     setScale(newScale);
@@ -60,6 +68,12 @@ const Card: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = "auto";
     };
   }, []);
 
@@ -73,7 +87,8 @@ const Card: React.FC = () => {
         className="card-container"
         ref={containerRef}
         onMouseMove={handleMouseMove}
-        onMouseOut={handleMouseOut}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         style={{ transform: `scale(${scale})` }}
       >
         <div className="overlay" ref={overlayRef}></div>
