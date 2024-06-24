@@ -9,3 +9,16 @@
   --subtext-color: rgb(73, 77, 81);
   --font-family: "Roboto Mono", monospace;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html {
+  background-color: var(--background-color);
+}
