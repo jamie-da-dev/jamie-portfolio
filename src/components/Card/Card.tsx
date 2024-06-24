@@ -50,22 +50,42 @@ const Card: React.FC = () => {
         <div className="overlay" ref={overlayRef}></div>
         <div className="card flex-center">
           <div className="card-logo flex-center">
-            <img src="./public/card-logo.png" />
+            <a
+              href="https://www.linkedin.com/in/jamie-da-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="./public/card-logo.png" />
+            </a>
           </div>
-          <div className="card-contents flex-center">
-            <div className="card-contents-name">JAMIE SHIN</div>
+          <div className="card-contents">
+            <div className="card-contents-name">
+              <a
+                href="https://www.instagram.com/tls___ha/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                JAMIE SHIN
+              </a>
+            </div>
             <div className="card-contents-role">Web Developer</div>
             <div className="card-contents-number">
               <IoPhonePortrait className="card-contents-icons" />
-              +64-21-205-5088
+              <a href="tel:+64212591874">+64-21-205-5088</a>
             </div>
             <div className="card-contents-email">
               <MdEmail className="card-contents-icons" />
-              jamietls0801@gmail.com
+              <a href="mailto:jamietls0801@gmail.com">jamietls0801@gmail.com</a>
             </div>
             <div className="card-contents-github">
               <FaGithub className="card-contents-icons" />
-              github.com/jamie-da-dev
+              <a
+                href="https://github.com/jamie-da-dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/jamie-da-dev/
+              </a>
             </div>
           </div>
         </div>
