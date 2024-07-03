@@ -99,7 +99,7 @@ const Card: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="./public/card-logo.png" />
+              <img src="card-logo.png" />
             </a>
           </div>
           <div className="card-contents">
