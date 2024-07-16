@@ -58,7 +58,7 @@ const Card: React.FC = () => {
 
     const scrollY = window.scrollY;
     const newScale = Math.max(0, 1 - scrollY / 1000);
-    const backgroundColor = Math.max(0, 40 - scrollY / 35);
+    const backgroundColor = Math.max(0, 40 - scrollY / 25);
 
     setColor(backgroundColor);
     setScale(newScale);

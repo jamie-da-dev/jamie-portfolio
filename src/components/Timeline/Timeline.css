@@ -1,0 +1,36 @@
+.timeline-container-row {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--aboutme-box-background);
+  margin-bottom: var(--margin-large);
+  border-radius: var(--border-radius);
+}
+
+.timeline-container-row:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-container-img {
+  width: 40%;
+  margin: 75px 75px;
+  border-radius: var(--border-radius);
+}
+
+.timeline-container-context {
+  width: 50%;
+  margin: 75px 75px 75px 0px;
+  text-align: right;
+}
+
+.timeline-date {
+  font-family: "Lilita One", sans-serif;
+  color: white;
+  font-size: 50px;
+  margin-bottom: var(--margin-large);
+}
+
+.timeline-container-detail {
+  font-family: "Archivo Narrow", sans-serif;
+  color: #c4c4c4;
+  font-size: 25px;
+}

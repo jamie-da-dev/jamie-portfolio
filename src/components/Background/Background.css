@@ -1,0 +1,39 @@
+.background-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease-in-out;
+  z-index: -1;
+}
+
+.background-box {
+  transform-style: preserve-3d;
+  animation: rotation 60s ease-in-out infinite alternate;
+}
+
+.background-span {
+  text-transform: uppercase;
+  position: absolute;
+  color: rgb(130, 60, 60);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 62.5px;
+  font-weight: 800;
+  white-space: nowrap;
+  padding: 0px 10px;
+  transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg))
+    translateZ(125px) rotateY(180deg) rotateZ(180deg);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotateX(515deg);
+  }
+  100% {
+    transform: rotateX(225deg);
+  }
+}
