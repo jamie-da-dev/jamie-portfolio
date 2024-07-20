@@ -1,0 +1,144 @@
+.project-container {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.925);
+}
+
+.project-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding-bottom: 100vh;
+  color: white;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.project-content.hidden {
+  opacity: 0;
+}
+
+.project-content.visible {
+  opacity: 1;
+}
+
+.project-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.project-overlay::before {
+  position: absolute;
+  content: "";
+  width: 200vw;
+  height: 200vw;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 0 9999px rgb(67, 67, 67);
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  z-index: 3;
+}
+
+.project-overlay.visible::before {
+  width: 30vw;
+  height: 30vw;
+}
+
+.project-overlay.bothVisible::before {
+  width: 0;
+  height: 0;
+}
+
+.project-item-box1,
+.project-item-box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 35vw;
+  height: 100vh;
+  transition: left 0.5s ease-in-out, right 0.5s ease-in-out;
+  z-index: 10;
+}
+.project-item-box1 {
+  left: -100vw;
+}
+.project-item-box2 {
+  right: -100vw;
+}
+
+.project-item-box1.visible {
+  left: 0;
+}
+.project-item-box2.visible {
+  right: 0;
+}
+
+.project-item {
+  height: 28vw;
+  width: 28vw;
+}
+
+.project-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.project-item-box1-content,
+.project-item-box2-content {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 0 50px;
+  font-size: 20px;
+  font-family: var(--font-family);
+}
+
+.project-item-box1-content > * {
+  margin-bottom: 30px;
+}
+
+.project-item-box1-content span,
+.project-item-box2-content span {
+  background-color: rgb(0, 0, 0);
+  padding: 3px;
+  line-height: 1.7;
+}
+
+.project-item-box2-content {
+  text-align: right;
+}
+
+.project-item-box2-content > * {
+  margin-bottom: 30px;
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(255, 255, 255);
+  }
+}
+
+.project-typing {
+  border-right: 8px solid rgb(255, 255, 255);
+  animation: blink 1s step-end infinite;
+}
+
+.project-end {
+  height: 1vh;
+}
