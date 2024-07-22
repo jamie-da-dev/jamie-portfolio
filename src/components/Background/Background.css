@@ -8,6 +8,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 1s ease-in-out;
+  perspective: 2000px;
   z-index: -1;
 }
 

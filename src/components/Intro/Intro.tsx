@@ -6,8 +6,8 @@ const Intro: React.FC = () => {
   const introRef = useRef<HTMLDivElement>(null);
   const hasExecutedRef = useRef(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [perspective, setPerspective] = useState(2000);
-  const [scale, setScale] = useState(0);
+  const [perspective, setPerspective] = useState(100);
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,18 +17,8 @@ const Intro: React.FC = () => {
       if (top < 1) {
         setIsVisible(true);
 
-        window.scrollTo({ top: window.scrollY + top, behavior: "smooth" });
-
-        document.body.style.overflow = "hidden";
-
         setPerspective(100);
         setScale(1);
-
-        setTimeout(() => {
-          document.body.style.overflow = "auto";
-        }, 2000);
-
-        hasExecutedRef.current = true;
       }
     };
 
@@ -54,9 +44,11 @@ const Intro: React.FC = () => {
             </div>
           </div>
           <div className="intro-context">
-            <div className="intro-quote">"blahblahblahblah</div>
-            <div className="intro-quote">blahblahblahblahblahblah</div>
-            <div className="intro-quote">blahblahblahblahblahblahblah"</div>
+            <div className="intro-quote">"SOMETIMES </div>
+            <div className="intro-quote">YOU NEVER REALISE THE VALUE OF</div>
+            <div className="intro-quote">
+              A MOMENT UNTIL IT BECOMES A MEMORY" - Dr. Seuss
+            </div>
           </div>
         </div>
       </div>

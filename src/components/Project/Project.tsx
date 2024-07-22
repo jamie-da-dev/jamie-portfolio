@@ -111,9 +111,7 @@ const Project: React.FC = () => {
             </div>
           </div>
           <div className="project-item" ref={ref}>
-            <img
-              src={index === 0 ? "public/project1.png" : "public/project2.png"}
-            ></img>
+            <img src={index === 0 ? "project1.png" : "project2.png"}></img>
           </div>
           <div
             className={`project-item-box2 ${
@@ -127,9 +125,17 @@ const Project: React.FC = () => {
                 </div>
                 <div>
                   <span>
-                    {index === 0
-                      ? "https://github.com/jamie-da-dev/jamie-portfolio"
-                      : "Starts in August"}
+                    {index === 0 ? (
+                      <a
+                        href="https://github.com/jamie-da-dev/jamie-portfolio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        "https://github.com/jamie-da-dev/jamie-portfolio"
+                      </a>
+                    ) : (
+                      "Starts in August"
+                    )}
                   </span>
                 </div>
               </div>
@@ -140,9 +146,17 @@ const Project: React.FC = () => {
                 <div>
                   <span>
                     {" "}
-                    {index === 0
-                      ? "https://github.com/jamie-da-dev/jamie-portfolio"
-                      : "Starts in August"}
+                    {index === 0 ? (
+                      <a
+                        href="https://github.com/jamie-da-dev/jamie-portfolio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        "https://github.com/jamie-da-dev/jamie-portfolio"
+                      </a>
+                    ) : (
+                      "Starts in August"
+                    )}
                   </span>
                 </div>
               </div>

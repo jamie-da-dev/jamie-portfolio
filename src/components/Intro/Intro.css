@@ -11,14 +11,6 @@
   transition: opacity 2s ease-in-out;
 }
 
-.intro-contents.hidden {
-  opacity: 0;
-}
-
-.intro-contents.visible {
-  opacity: 1;
-}
-
 .intro-heading {
   display: flex;
   justify-content: end;
@@ -45,7 +37,7 @@
   }
   61%,
   80% {
-    content: "designer.";
+    content: "cameraman.";
   }
   81%,
   100% {
@@ -124,6 +116,9 @@
   position: absolute;
   bottom: 30px;
   margin-left: 50px;
+  line-height: 1.1;
+  text-transform: lowercase;
+  color: #fff8f3;
 }
 
 .intro-quote {

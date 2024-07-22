@@ -7,32 +7,31 @@ const timelines = [
   {
     imgSrc: "aboutme1.jpeg",
     date: "08.2001",
-    detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    detail: "Born in August 2001, marking the beginning of my journey.",
   },
   {
     imgSrc: "aboutme2.jpeg",
     date: "03.2008",
     detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Embarked on my educational journey by starting elementary school, eager to learn and grow.",
   },
   {
     imgSrc: "aboutme3.jpeg",
     date: "06.2013",
     detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Significant life change by immigrating from Korea to New Zealand, embracing a new culture and environment.",
   },
   {
     imgSrc: "aboutme4.jpeg",
     date: "06.2020",
     detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Milestone in my personal life as I got married, starting a new chapter with my partner.",
   },
   {
     imgSrc: "aboutme5.jpeg",
     date: "05.2024",
     detail:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Proudly graduated from the University of Auckland with a Bachelor of Science in Computer Science, celebrating years of hard work and dedication to my studies.",
   },
 ];
 
@@ -64,9 +63,27 @@ const AboutMe: React.FC = () => {
               LINK
             </div>
             <div className="aboutme-profile-detail-content aboutme-profile-detail-last">
-              <AiFillInstagram className="aboutme-profile-icon" />
-              <FaLinkedin className="aboutme-profile-icon" />
-              <FaGithub className="aboutme-profile-icon" />
+              <a
+                href="https://www.instagram.com/tls___ha/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillInstagram className="aboutme-profile-icon" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jamie-da-dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="aboutme-profile-icon" />
+              </a>
+              <a
+                href="https://github.com/jamie-da-dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="aboutme-profile-icon" />
+              </a>
             </div>
           </div>
         </div>
