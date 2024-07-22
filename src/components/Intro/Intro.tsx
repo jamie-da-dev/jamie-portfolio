@@ -45,13 +45,18 @@ const Intro: React.FC = () => {
       <div ref={introRef} className="intro-background">
         <div className={`intro-contents ${isVisible ? "visible" : "hidden"}`}>
           <div className="intro-heading">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            <div className="intro-typing intro-role-box">
+              <span className="intro-role"></span>
+            </div>
+            <div className="intro-name">
+              <div className="intro-name">JAMIE</div>
+              <div className="intro-name">SHIN</div>
+            </div>
+          </div>
+          <div className="intro-context">
+            <div className="intro-quote">"blahblahblahblah</div>
+            <div className="intro-quote">blahblahblahblahblahblah</div>
+            <div className="intro-quote">blahblahblahblahblahblahblah"</div>
           </div>
         </div>
       </div>

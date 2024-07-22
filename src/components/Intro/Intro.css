@@ -1,10 +1,13 @@
 .intro-background {
-  color: white;
+  color: #f7e7dc;
   height: 100vh;
   width: 100%;
 }
 
 .intro-contents {
+  height: 100%;
+  position: relative;
+  font-family: "Oswald", sans-serif;
   transition: opacity 2s ease-in-out;
 }
 
@@ -17,5 +20,112 @@
 }
 
 .intro-heading {
-  padding: 100px;
+  display: flex;
+  justify-content: end;
+  text-align: end;
+  font-family: "Oswald", sans-serif;
+  font-size: 200px;
+  padding: 50px;
+  letter-spacing: -10px;
+  line-height: 0.85;
+}
+
+@keyframes switchWord {
+  0%,
+  20% {
+    content: "developer.";
+  }
+  21%,
+  40% {
+    content: "ufc lover.";
+  }
+  41%,
+  60% {
+    content: "shinjunha.";
+  }
+  61%,
+  80% {
+    content: "designer.";
+  }
+  81%,
+  100% {
+    content: "human made.";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
+  }
+}
+
+@keyframes blink {
+  to {
+    border-left: 2px solid #ffffff00;
+  }
+}
+
+.intro-role-box {
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-family);
+  width: 220px;
+  height: 50px;
+  margin-top: 15px;
+  padding-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #101010;
+  letter-spacing: 0px;
+}
+
+.intro-role {
+  position: relative;
+}
+
+.intro-role::before {
+  content: "DEVELOPER.";
+  color: #758694;
+  animation: switchWord 20s infinite;
+}
+
+.intro-role::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 70%;
+  background-color: #101010;
+  border-left: 8px solid #ffffff;
+  right: -8px;
+  animation: typing 20s steps(10) infinite, blink 1s infinite;
+}
+
+.intro-context {
+  position: absolute;
+  bottom: 30px;
+  margin-left: 50px;
+}
+
+.intro-quote {
+  font-size: 40px;
 }
