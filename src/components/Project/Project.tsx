@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
+import Footage from "../Footage/Footage";
 import "./Project.css";
 
 const Project: React.FC = () => {
   const projectRef = useRef<HTMLDivElement>(null);
   const itemRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
   const endRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isItemVisible, setIsItemVisible] = useState([false, false]);
   const [isEndVisible, setIsEndVisible] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,6 +55,32 @@ const Project: React.FC = () => {
       if (endRef.current) endObserver.unobserve(endRef.current);
     };
   }, []);
+
+  const handleScroll = () => {
+    if (endRef.current) {
+      const { top, height } = endRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const scrolled = Math.min(Math.max((windowHeight - top) / height, 0), 1);
+      setScrollProgress(scrolled);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (overlayRef.current) {
+      const darkness = 1 - Math.min(scrollProgress * 2, 1);
+      overlayRef.current.style.setProperty(
+        "--box-shadow-opacity",
+        darkness.toString()
+      );
+    }
+  }, [scrollProgress]);
 
   return (
     <div className="project-container" ref={projectRef}>
@@ -124,7 +153,7 @@ const Project: React.FC = () => {
                 <div>
                   <span>
                     {index === 0
-                      ? "React, Typescript"
+                      ? "Typescript, React"
                       : "Typescript, React, Node.js, MongoDB"}
                   </span>
                 </div>
@@ -133,12 +162,15 @@ const Project: React.FC = () => {
           </div>
         </div>
       ))}
+
       <div className="project-end" ref={endRef}></div>
       <div
         className={`project-overlay ${
           isVisible ? (isEndVisible ? "bothVisible" : "visible") : "hidden"
         }`}
+        ref={overlayRef}
       ></div>
+      <Footage></Footage>
     </div>
   );
 };

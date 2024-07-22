@@ -1,0 +1,39 @@
+.footage-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  background-color: black;
+  height: 100vh;
+}
+
+.footage-box {
+  width: 400px;
+  height: 225px;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 16px 16px -8px rgba(0, 0, 0, 0.5),
+    0px -8px 16px -8px rgba(63, 63, 63, 0.5),
+    0px 4px 16px -1px rgba(93, 93, 93, 0.5),
+    0px -8px 36px 1px rgba(93, 93, 93, 0.5),
+    0px 8px 64px 1px rgba(93, 93, 93, 0.5);
+  transform: scale(0);
+  transition: transform 1s ease-in-out;
+}
+
+.footage-box.visible {
+  transform: scale(1);
+}
+
+.footage-overlay {
+  position: absolute;
+  width: 400px;
+  height: 225px;
+  z-index: 1;
+}
+
+.footage-end {
+  position: relative;
+  height: 1vh;
+}

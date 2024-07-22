@@ -35,14 +35,14 @@ const Card: React.FC = () => {
   };
 
   const handleMouseEnter = () => {
-    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   };
 
   const handleMouseLeave = () => {
     console.log("Out");
     if (!overlayRef.current || !containerRef.current) return;
 
-    document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
 
     overlayRef.current.style.filter = "opacity(0)";
     containerRef.current.style.transform =

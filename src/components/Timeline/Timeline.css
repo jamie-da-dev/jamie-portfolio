@@ -1,7 +1,7 @@
 .timeline-container-row {
   display: flex;
   justify-content: space-evenly;
-  background-color: var(--aboutme-box-background);
+  background-color: rgb(15, 15, 15);
   margin-bottom: var(--margin-large);
   border-radius: var(--border-radius);
 }
@@ -10,14 +10,19 @@
   margin-bottom: 0;
 }
 
-.timeline-container-img {
-  width: 40%;
+.timeline-container-img-box {
+  width: 35%;
   margin: 75px 75px;
+  opacity: 1;
+}
+
+.timeline-container-img {
+  width: 100%;
   border-radius: var(--border-radius);
 }
 
 .timeline-container-context {
-  width: 50%;
+  width: 65%;
   margin: 75px 75px 75px 0px;
   text-align: right;
 }

@@ -5,30 +5,32 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const timelines = [
   {
-    imgSrc:
-      "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk5Ni0wMDlfMS1rcm9pcjRkay5qcGc.jpg",
+    imgSrc: "aboutme1.jpeg",
     date: "08.2001",
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    imgSrc:
-      "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk5Ni0wMDlfMS1rcm9pcjRkay5qcGc.jpg",
-    date: "02.2008",
+    imgSrc: "aboutme2.jpeg",
+    date: "03.2008",
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    imgSrc:
-      "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk5Ni0wMDlfMS1rcm9pcjRkay5qcGc.jpg",
+    imgSrc: "aboutme3.jpeg",
     date: "06.2013",
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    imgSrc:
-      "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk5Ni0wMDlfMS1rcm9pcjRkay5qcGc.jpg",
-    date: "07.2024",
+    imgSrc: "aboutme4.jpeg",
+    date: "06.2020",
+    detail:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    imgSrc: "aboutme5.jpeg",
+    date: "05.2024",
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -69,10 +71,6 @@ const AboutMe: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="aboutme-quote">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </div>
       <div className="aboutme-timeline">
         <div className="aboutme-timeline-container">
           <div className="aboutme-timeline-container-box">
@@ -80,11 +78,9 @@ const AboutMe: React.FC = () => {
               <Timeline key={index} {...event} />
             ))}
           </div>
-
-          <div className="aboutme-timeline-container-scroll">SCROLL</div>
         </div>
       </div>
-      <div className="test"></div>
+      <div className="aboutme-end"></div>
     </div>
   );
 };

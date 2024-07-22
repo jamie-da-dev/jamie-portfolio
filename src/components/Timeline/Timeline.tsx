@@ -11,7 +11,10 @@ const Timeline: React.FC<TimelineProps> = ({ imgSrc, date, detail }) => {
   const [month, year] = date.split(".");
   return (
     <div className="timeline-container-row">
-      <img className="timeline-container-img" src={imgSrc} alt="Event" />
+      <div className="timeline-container-img-box">
+        <img className="timeline-container-img" src={imgSrc} alt="Event" />
+      </div>
+
       <div className="timeline-container-context">
         <div className="timeline-date">
           <div className="timeline-month">.{month}</div>
