@@ -36,7 +36,7 @@ const timelines = [
       "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068926/aboutme5_jwcnml.jpg",
     date: "05.2024",
     detail:
-      "Proudly graduated from the University of Auckland with a Bachelor of Science in Computer Science, celebrating years of hard work and dedication to my studies.",
+      "Proudly graduated from the University of Auckland with a Bachelor of Science in Computer Science.",
   },
 ];
 
@@ -47,7 +47,7 @@ const AboutMe: React.FC = () => {
         <div className="aboutme-profile-picture">
           <div className="aboutme-header">PROFILE</div>
           <img
-            src="https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068926/profile_nhazv0.png"
+            src="https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722076846/profile_efmcam.png"
             alt="Profile"
           ></img>
         </div>
@@ -102,6 +102,11 @@ const AboutMe: React.FC = () => {
             {timelines.map((event, index) => (
               <Timeline key={index} {...event} />
             ))}
+          </div>
+        </div>
+        <div className="aboutme-timeline-scroll">
+          <div className="aboutme-timeline-scroll-text">
+            <span>Hello World?</span>
           </div>
         </div>
       </div>

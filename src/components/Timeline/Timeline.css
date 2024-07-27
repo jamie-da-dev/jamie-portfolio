@@ -11,7 +11,7 @@
 }
 
 .timeline-container-img-box {
-  width: 35%;
+  width: 40%;
   margin: 75px 75px;
   opacity: 1;
 }
@@ -22,7 +22,7 @@
 }
 
 .timeline-container-context {
-  width: 65%;
+  width: 60%;
   margin: 75px 75px 75px 0px;
   text-align: right;
 }
@@ -38,5 +38,5 @@
 .timeline-container-detail {
   font-family: "Inconsolata", monospace;
   color: #c4c4c4;
-  font-size: 23px;
+  font-size: 25px;
 }

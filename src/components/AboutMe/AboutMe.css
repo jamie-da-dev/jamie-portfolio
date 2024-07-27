@@ -74,9 +74,29 @@
 }
 
 .aboutme-timeline {
-  width: 90%;
+  display: flex;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.aboutme-timeline-container {
+  width: 80%;
+}
+
+.aboutme-timeline-scroll {
+  display: flex;
+  width: 20%;
+  margin-right: 75px;
+  background-color: #00007f;
+}
+
+.aboutme-timeline-scroll-text {
+  display: flex;
+  width: 100%;
+  font-size: 30px;
+  font-family: "VT323", monospace;
+  writing-mode: vertical-lr;
+  color: rgb(255, 255, 255);
 }
 
 .aboutme-end {
