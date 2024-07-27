@@ -3,6 +3,7 @@ import Card from "./components/Card/Card";
 import Intro from "./components/Intro/Intro";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Project from "./components/Project/Project";
+import MobileOverlay from "./components/MobileOverlay/MobileOverlay";
 import "./App.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   }, []);
   return (
     <>
+      <MobileOverlay></MobileOverlay>
       <Card></Card>
       <Intro></Intro>
       <AboutMe></AboutMe>

@@ -39,7 +39,6 @@ const Card: React.FC = () => {
   };
 
   const handleMouseLeave = () => {
-    console.log("Out");
     if (!overlayRef.current || !containerRef.current) return;
 
     document.documentElement.style.overflow = "auto";
