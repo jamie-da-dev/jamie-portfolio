@@ -111,7 +111,13 @@ const Project: React.FC = () => {
             </div>
           </div>
           <div className="project-item" ref={ref}>
-            <img src={index === 0 ? "project1.png" : "project2.png"}></img>
+            <img
+              src={
+                index === 0
+                  ? "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068923/project1_o5oz3z.png"
+                  : "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068924/project2_ikbsmo.png"
+              }
+            ></img>
           </div>
           <div
             className={`project-item-box2 ${
@@ -148,11 +154,11 @@ const Project: React.FC = () => {
                     {" "}
                     {index === 0 ? (
                       <a
-                        href="https://github.com/jamie-da-dev/jamie-portfolio"
+                        href="https://jamie-da-dev.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        "https://github.com/jamie-da-dev/jamie-portfolio"
+                        "jamie-da-dev.com"
                       </a>
                     ) : (
                       "Starts in August"
@@ -167,8 +173,8 @@ const Project: React.FC = () => {
                 <div>
                   <span>
                     {index === 0
-                      ? "Typescript, React"
-                      : "Typescript, React, Node.js, MongoDB"}
+                      ? "TypeScript, React"
+                      : "TypeScript, React, Node.js, MongoDB"}
                   </span>
                 </div>
               </div>

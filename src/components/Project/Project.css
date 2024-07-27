@@ -40,7 +40,7 @@
   height: 200vw;
   background: transparent;
   border-radius: 50%;
-  box-shadow: 0 0 0 9999px rgba(20, 20, 20, var(--box-shadow-opacity));
+  box-shadow: 0 0 0 9999px rgba(220, 220, 220, var(--box-shadow-opacity));
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
   z-index: 3;
 }

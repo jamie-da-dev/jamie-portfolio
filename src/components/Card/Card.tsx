@@ -10,7 +10,7 @@ const Card: React.FC = () => {
   const overlayRef = useRef<HTMLDivElement>(null);
 
   const [scale, setScale] = useState(1);
-  const [color, setColor] = useState(40); //Original Background Color is rgb(40, 40, 40).
+  const [color, setColor] = useState(200); //Original Background Color is rgb(200, 200, 200).
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!containerRef.current || !overlayRef.current || !backgroundRef.current)
@@ -51,13 +51,19 @@ const Card: React.FC = () => {
   };
 
   const handleScroll = () => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || !backgroundRef.current) return;
 
     containerRef.current.style.transition = "transform 0.1s";
 
+    const rect = backgroundRef.current.getBoundingClientRect();
     const scrollY = window.scrollY;
-    const newScale = Math.max(0, 1 - scrollY / 1000);
-    const backgroundColor = Math.max(0, 40 - scrollY / 25);
+    const backgroundHeight = rect.height;
+
+    const newScale = Math.max(0, 1 - (scrollY / backgroundHeight) * 2);
+    const backgroundColor = Math.max(
+      0,
+      200 - (scrollY / backgroundHeight) * 400
+    );
 
     setColor(backgroundColor);
     setScale(newScale);
@@ -98,7 +104,7 @@ const Card: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="card-logo.png" />
+              <img src="https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068922/card-logo_g0ukoy.png" />
             </a>
           </div>
           <div className="card-contents">
@@ -111,7 +117,7 @@ const Card: React.FC = () => {
                 JAMIE SHIN
               </a>
             </div>
-            <div className="card-contents-role">Web Developer</div>
+            <div className="card-contents-role">Developer</div>
             <div className="card-contents-number">
               <IoPhonePortrait className="card-contents-icons" />
               <a href="tel:+64212591874">+64-21-205-5088</a>

@@ -47,7 +47,7 @@ a {
 .card-logo {
   width: 40%;
   height: 55%;
-  border-right: 3px solid rgb(189, 203, 220);
+  border-right: 3px solid rgb(150, 150, 150);
 }
 
 .card-logo img {
@@ -90,7 +90,7 @@ a {
 }
 
 .card-contents-role {
-  color: var(--subtext-color);
+  color: rgb(150, 150, 150);
   font-size: 20px;
   margin-bottom: 50px;
   padding: 5px;

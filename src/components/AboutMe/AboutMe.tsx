@@ -5,30 +5,35 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const timelines = [
   {
-    imgSrc: "aboutme1.jpeg",
+    imgSrc:
+      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068924/aboutme1_rguyxo.jpg",
     date: "08.2001",
     detail: "Born in August 2001, marking the beginning of my journey.",
   },
   {
-    imgSrc: "aboutme2.jpeg",
+    imgSrc:
+      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068927/aboutme2_ze5kay.jpg",
     date: "03.2008",
     detail:
       "Embarked on my educational journey by starting elementary school, eager to learn and grow.",
   },
   {
-    imgSrc: "aboutme3.jpeg",
+    imgSrc:
+      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068923/aboutme3_rh7bqs.jpg",
     date: "06.2013",
     detail:
       "Significant life change by immigrating from Korea to New Zealand, embracing a new culture and environment.",
   },
   {
-    imgSrc: "aboutme4.jpeg",
+    imgSrc:
+      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068930/aboutme4_nkw6rw.jpg",
     date: "06.2020",
     detail:
       "Milestone in my personal life as I got married, starting a new chapter with my partner.",
   },
   {
-    imgSrc: "aboutme5.jpeg",
+    imgSrc:
+      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068926/aboutme5_jwcnml.jpg",
     date: "05.2024",
     detail:
       "Proudly graduated from the University of Auckland with a Bachelor of Science in Computer Science, celebrating years of hard work and dedication to my studies.",
@@ -41,7 +46,10 @@ const AboutMe: React.FC = () => {
       <div className="aboutme-profile">
         <div className="aboutme-profile-picture">
           <div className="aboutme-header">PROFILE</div>
-          <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"></img>
+          <img
+            src="https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068926/profile_nhazv0.png"
+            alt="Profile"
+          ></img>
         </div>
         <div className="aboutme-profile-detail">
           <div className="aboutme-profile-name">

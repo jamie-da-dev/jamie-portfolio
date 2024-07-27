@@ -1,7 +1,7 @@
 .timeline-container-row {
   display: flex;
   justify-content: space-evenly;
-  background-color: rgb(15, 15, 15);
+  background-color: rgb(0, 0, 0);
   margin-bottom: var(--margin-large);
   border-radius: var(--border-radius);
 }
@@ -36,7 +36,7 @@
 }
 
 .timeline-container-detail {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Inconsolata", monospace;
   color: #c4c4c4;
-  font-size: 25px;
+  font-size: 23px;
 }
