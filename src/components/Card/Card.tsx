@@ -139,7 +139,7 @@ const Card: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                github.com/jamie-da-dev/
+                github.com/jamie-da-dev
               </a>
             </div>
           </div>

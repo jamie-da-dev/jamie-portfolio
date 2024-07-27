@@ -2,6 +2,7 @@ import "./AboutMe.css";
 import Timeline from "../Timeline/Timeline";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import React, { useRef, useEffect, useState } from "react";
 
 const timelines = [
   {
@@ -41,6 +42,30 @@ const timelines = [
 ];
 
 const AboutMe: React.FC = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [scrollRatio, setScrollRatio] = useState(0);
+
+  const handleScroll = () => {
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      const elementHeight = rect.height;
+      const windowHeight = window.innerHeight;
+
+      const ratio = Math.max(
+        0,
+        Math.min(1, (windowHeight - rect.top) / (windowHeight + elementHeight))
+      );
+      setScrollRatio(ratio);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="aboutme-contents">
       <div className="aboutme-profile">
@@ -104,9 +129,12 @@ const AboutMe: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="aboutme-timeline-scroll">
-          <div className="aboutme-timeline-scroll-text">
-            <span>Hello World?</span>
+        <div className="aboutme-timeline-scroll" ref={ref}>
+          <div
+            className="aboutme-timeline-scroll-img"
+            style={{ transform: `translateX(-${scrollRatio * 100}%)` }}
+          >
+            <img src="https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722090565/banner_vdkojq.png"></img>
           </div>
         </div>
       </div>
