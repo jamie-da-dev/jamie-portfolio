@@ -29,7 +29,7 @@ const Footage: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className="footage">
       <div className="footage-content">
         <div className={`footage-box ${isVisible ? "visible" : "hidden"}`}>
           {" "}

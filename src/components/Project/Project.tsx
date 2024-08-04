@@ -74,10 +74,10 @@ const Project: React.FC = () => {
 
   useEffect(() => {
     if (overlayRef.current) {
-      const darkness = 1 - Math.min(scrollProgress * 2, 1);
+      const colour = 220 - Math.min(scrollProgress * 2 * 220, 220);
       overlayRef.current.style.setProperty(
-        "--box-shadow-opacity",
-        darkness.toString()
+        "--box-shadow-colour",
+        colour.toString()
       );
     }
   }, [scrollProgress]);
@@ -137,7 +137,7 @@ const Project: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        "https://github.com/jamie-da-dev/jamie-portfolio"
+                        https://github.com/jamie-da-dev/jamie-portfolio
                       </a>
                     ) : (
                       "Starts in August"
@@ -158,7 +158,7 @@ const Project: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        "jamie-da-dev.com"
+                        jamie-da-dev.com
                       </a>
                     ) : (
                       "Starts in August"

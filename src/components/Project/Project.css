@@ -9,7 +9,7 @@
   align-items: center;
   text-align: center;
   position: relative;
-  padding-bottom: 100vh;
+  padding-bottom: 50vh;
   color: white;
   transition: opacity 0.3s ease-in-out;
 }
@@ -40,7 +40,13 @@
   height: 200vw;
   background: transparent;
   border-radius: 50%;
-  box-shadow: 0 0 0 9999px rgba(220, 220, 220, var(--box-shadow-opacity));
+  box-shadow: 0 0 0 9999px
+    rgba(
+      var(--box-shadow-colour),
+      var(--box-shadow-colour),
+      var(--box-shadow-colour),
+      1
+    );
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
   z-index: 3;
 }
@@ -62,7 +68,6 @@
   align-items: center;
   position: relative;
   width: 35vw;
-  height: 100vh;
   transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
   z-index: 10;
 }
@@ -140,5 +145,5 @@
 }
 
 .project-end {
-  height: 200vh;
+  height: 100vh;
 }
