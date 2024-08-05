@@ -1,0 +1,24 @@
+.scrollbar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  right: 17.5px;
+  top: 10vh;
+  width: 20px;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.scrollbar-indicator {
+  width: 10px;
+  height: 30px;
+  background-color: #3c6281;
+  border-radius: 5px;
+  position: absolute;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
