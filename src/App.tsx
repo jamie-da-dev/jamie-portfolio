@@ -6,7 +6,7 @@ import Project from "./components/Project/Project";
 import MobileOverlay from "./components/MobileOverlay/MobileOverlay";
 import Scrollbar from "./components/Scrollbar/Scrollbar";
 import LanguageSwitcher from "./components/LanguageSwitcher/LanguageSwitcher";
-import { Language } from "./types"; // Import the Language type
+import { Language } from "./types";
 import "./App.css";
 
 function App() {

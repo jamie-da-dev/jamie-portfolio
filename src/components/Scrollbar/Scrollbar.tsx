@@ -6,8 +6,12 @@ const Scrollbar: React.FC = () => {
 
   const handleScroll = () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const additionalHeight = window.innerHeight / 3; // Added additional height for the Footage component.
     const docHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
+      document.documentElement.scrollHeight -
+      window.innerHeight +
+      additionalHeight;
+
     const scrolled = (scrollTop / docHeight) * 100;
     setScrollPosition(scrolled);
   };
