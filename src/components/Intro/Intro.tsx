@@ -1,8 +1,14 @@
+// Intro.tsx
 import "./Intro.css";
 import React, { useEffect, useRef, useState } from "react";
 import Background from "../Background/Background";
+import { Language } from "../../types";
 
-const Intro: React.FC = () => {
+interface IntroProps {
+  language: Language;
+}
+
+const Intro: React.FC<IntroProps> = ({ language }) => {
   const introRef = useRef<HTMLDivElement>(null);
   const hasExecutedRef = useRef(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -44,10 +50,16 @@ const Intro: React.FC = () => {
             </div>
           </div>
           <div className="intro-context">
-            <div className="intro-quote">"SOMETIMES </div>
-            <div className="intro-quote">YOU NEVER REALISE THE VALUE OF</div>
             <div className="intro-quote">
-              A MOMENT UNTIL IT BECOMES A MEMORY" - Dr. Seuss
+              {language === "en" && "'SOMETIMES YOU NEVER REALISE"}
+              {language === "ko" && ""}
+              {language === "ja" && ""}
+            </div>
+            <div className="intro-quote">
+              {language === "en" &&
+                "THE VALUE OF A MOMENT UNTIL IT BECOMES A MEMORY'"}
+              {language === "ko" && "'내 언어적 한계는 내 세계의 한계다'"}
+              {language === "ja" && "'百聞は一見にしかず.'"}
             </div>
           </div>
         </div>

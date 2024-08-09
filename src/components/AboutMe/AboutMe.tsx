@@ -3,45 +3,14 @@ import Timeline from "../Timeline/Timeline";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import React, { useRef, useEffect, useState } from "react";
+import { Language } from "../../types";
+import timelines from "./timelines";
 
-const timelines = [
-  {
-    imgSrc:
-      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068924/aboutme1_rguyxo.jpg",
-    date: "08.2001",
-    detail: "Born in August 2001, marking the beginning of my journey.",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068927/aboutme2_ze5kay.jpg",
-    date: "03.2008",
-    detail:
-      "Embarked on my educational journey by starting elementary school, eager to learn and grow.",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068923/aboutme3_rh7bqs.jpg",
-    date: "06.2013",
-    detail:
-      "Significant life change by immigrating from Korea to New Zealand, embracing a new culture and environment.",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068930/aboutme4_nkw6rw.jpg",
-    date: "06.2020",
-    detail:
-      "Milestone in my personal life as I got married, starting a new chapter with my partner.",
-  },
-  {
-    imgSrc:
-      "https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722068926/aboutme5_jwcnml.jpg",
-    date: "05.2024",
-    detail:
-      "Proudly graduated from the University of Auckland with a Bachelor of Science in Computer Science.",
-  },
-];
+interface AboutMeProps {
+  language: Language;
+}
 
-const AboutMe: React.FC = () => {
+const AboutMe: React.FC<AboutMeProps> = ({ language }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [scrollRatio, setScrollRatio] = useState(0);
 
@@ -70,30 +39,58 @@ const AboutMe: React.FC = () => {
     <div className="aboutme-contents">
       <div className="aboutme-profile">
         <div className="aboutme-profile-picture">
-          <div className="aboutme-header">PROFILE</div>
+          <div className="aboutme-header">
+            {language === "en" && "PROFILE"}
+            {language === "ko" && "프로필"}
+            {language === "ja" && "プロフィール"}
+          </div>
           <img
             src="https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722076846/profile_efmcam.png"
             alt="Profile"
-          ></img>
+          />
         </div>
         <div className="aboutme-profile-detail">
           <div className="aboutme-profile-name">
-            <div className="aboutme-profile-detail-title">NAME</div>
-            <div className="aboutme-profile-detail-content">JAMIE SHIN</div>
+            <div className="aboutme-profile-detail-title">
+              {language === "en" && "NAME"}
+              {language === "ko" && "이름"}
+              {language === "ja" && "名前"}
+            </div>
+            <div className="aboutme-profile-detail-content">
+              {language === "en" && "JAMIE SHIN"}
+              {language === "ko" && "신준하"}
+              {language === "ja" && "シン・ジュンハ"}
+            </div>
           </div>
           <div className="aboutme-profile-dob">
-            <div className="aboutme-profile-detail-title">DOB</div>
-            <div className="aboutme-profile-detail-content">01/08/2001</div>
+            <div className="aboutme-profile-detail-title">
+              {language === "en" && "DOB"}
+              {language === "ko" && "생년월일"}
+              {language === "ja" && "生年月日"}
+            </div>
+            <div className="aboutme-profile-detail-content">
+              {language === "en" && "01/08/2001"}
+              {language === "ko" && "2001년 8월 1일"}
+              {language === "ja" && "2001年8月1日"}
+            </div>
           </div>
           <div className="aboutme-profile-link">
-            <div className="aboutme-profile-detail-title">ADDRESS</div>
+            <div className="aboutme-profile-detail-title">
+              {language === "en" && "ADDRESS"}
+              {language === "ko" && "주소"}
+              {language === "ja" && "住所"}
+            </div>
             <div className="aboutme-profile-detail-content">
-              AUCKLAND, NEW ZEALAND
+              {language === "en" && "AUCKLAND, NEW ZEALAND"}
+              {language === "ko" && "오클랜드, 뉴질랜드"}
+              {language === "ja" && "オークランド、ニュージーランド"}
             </div>
           </div>
           <div className="aboutme-profile-address">
             <div className="aboutme-profile-detail-title aboutme-profile-detail-last">
-              LINK
+              {language === "en" && "LINK"}
+              {language === "ko" && "링크"}
+              {language === "ja" && "リンク"}
             </div>
             <div className="aboutme-profile-detail-content aboutme-profile-detail-last">
               <a
@@ -124,7 +121,7 @@ const AboutMe: React.FC = () => {
       <div className="aboutme-timeline">
         <div className="aboutme-timeline-container">
           <div className="aboutme-timeline-container-box">
-            {timelines.map((event, index) => (
+            {timelines[language].map((event, index) => (
               <Timeline key={index} {...event} />
             ))}
           </div>
@@ -134,7 +131,7 @@ const AboutMe: React.FC = () => {
             className="aboutme-timeline-scroll-img"
             style={{ transform: `translateX(-${scrollRatio * 100}%)` }}
           >
-            <img src="https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722090565/banner_vdkojq.png"></img>
+            <img src="https://res.cloudinary.com/dzdr7yyz4/image/upload/v1722090565/banner_vdkojq.png" />
           </div>
         </div>
       </div>

@@ -32,8 +32,6 @@
 }
 
 .aboutme-profile-detail {
-  display: grid;
-  grid-template-columns: max-content auto;
   align-items: center;
   width: 60%;
   height: 150px;
@@ -47,18 +45,21 @@
 }
 
 .aboutme-profile-detail > * {
-  display: contents;
+  display: flex;
+  justify-content: space-between;
   font-size: 20px;
 }
 
 .aboutme-profile-detail-title {
   padding: 30px 80px 30px 0px;
   border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  width: 30%;
 }
 
 .aboutme-profile-detail-content {
   padding: 30px 0px 30px 0px;
   border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+  width: 70%;
 }
 
 .aboutme-profile-detail-content {

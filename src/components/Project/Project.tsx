@@ -1,8 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Footage from "../Footage/Footage";
 import "./Project.css";
+import { Language } from "../../types";
 
-const Project: React.FC = () => {
+interface ProjectProps {
+  language: Language;
+}
+
+const Project: React.FC<ProjectProps> = ({ language }) => {
   const projectRef = useRef<HTMLDivElement>(null);
   const itemRefs = [useRef<HTMLDivElement>(null), useRef<HTMLDivElement>(null)];
   const endRef = useRef<HTMLDivElement>(null);
@@ -82,6 +87,27 @@ const Project: React.FC = () => {
     }
   }, [scrollProgress]);
 
+  const projectDescriptions = {
+    en: [
+      "Built with React and TypeScript, this site showcases my skills, projects, and personality as a web developer. It features dynamic UI elements and detailed project sections, highlighting my expertise in modern web development technologies.",
+      "E-commerce platform focused on footwear, offering features for buying, selling, trading, and restoration. Built with React for the frontend and Node.js with Express and MongoDB on the backend, it provides seamless user interaction and robust data management.",
+    ],
+    ko: [
+      "React와 TypeScript로 구축된 이 사이트는 저의 웹 개발자로서의 기술, 프로젝트, 그리고 개성을 보여줍니다. 동적인 UI 요소와 상세한 프로젝트 섹션을 통해 현대 웹 개발 기술에 대한 저의 전문성을 강조합니다.",
+      "신발에 중점을 둔 전자상거래 플랫폼으로, 구매, 판매, 거래, 복원 기능을 제공합니다. 프론트엔드는 React로, 백엔드는 Node.js와 Express, 그리고 MongoDB로 구축되어 원활한 사용자 상호작용과 강력한 데이터 관리를 제공합니다.",
+    ],
+    ja: [
+      "ReactとTypeScriptで構築されたこのサイトは、私のウェブ開発者としてのスキル、プロジェクト、そして個性を紹介します。動的なUI要素や詳細なプロジェクトセクションを通じて、現代のウェブ開発技術に対する私の専門知識を強調しています。",
+      "靴に特化した電子商取引プラットフォームで、購入、販売、取引、修復機能を提供します。フロントエンドはReactで、バックエンドはNode.jsとExpress、そしてMongoDBで構築され、シームレスなユーザーインタラクションと強力なデータ管理を提供します。",
+    ],
+  };
+
+  const projectStart = {
+    en: "Starts in August",
+    ko: "8월에 시작",
+    ja: "8月に開始",
+  };
+
   return (
     <div className="project-container" ref={projectRef}>
       {itemRefs.map((ref, index) => (
@@ -102,9 +128,7 @@ const Project: React.FC = () => {
               <div>
                 <div>
                   <span className="project-typing">
-                    {index === 0
-                      ? "Built with React and TypeScript, this site showcases my skills, projects, and personality as a web developer. It features dynamic UI elements and detailed project sections, highlighting my expertise in modern web development technologies."
-                      : "E-commerce platform focused on footwear, offering features for buying, selling, trading, and restoration. Built with React for the frontend and Node.js with Express and MongoDB on the backend, it provides seamless user interaction and robust data management."}
+                    {projectDescriptions[language][index]}
                   </span>
                 </div>
               </div>
@@ -140,7 +164,7 @@ const Project: React.FC = () => {
                         https://github.com/jamie-da-dev/jamie-portfolio
                       </a>
                     ) : (
-                      "Starts in August"
+                      projectStart[language]
                     )}
                   </span>
                 </div>
@@ -161,7 +185,7 @@ const Project: React.FC = () => {
                         jamie-da-dev.com
                       </a>
                     ) : (
-                      "Starts in August"
+                      projectStart[language]
                     )}
                   </span>
                 </div>

@@ -1,10 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Language } from "../../types";
 import "./Card.css";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoPhonePortrait } from "react-icons/io5";
 
-const Card: React.FC = () => {
+interface CardProps {
+  language: Language;
+}
+
+const Card: React.FC<CardProps> = ({ language }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const backgroundRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -29,7 +34,6 @@ const Card: React.FC = () => {
     overlayRef.current.style.filter = `opacity(${x / 450}) brightness(0.4)`;
     overlayRef.current.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.2) 10%, transparent) 50%`;
 
-    // Reset the Transition affected by handleMouseOut
     containerRef.current.style.transition = "all 0.1s";
     overlayRef.current.style.transition = "all 0.1s";
   };
@@ -76,12 +80,6 @@ const Card: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
-
   return (
     <div
       className="card-background flex-center"
@@ -114,10 +112,16 @@ const Card: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                JAMIE SHIN
+                {language === "en" && "JAMIE SHIN"}
+                {language === "ko" && "신준하"}
+                {language === "ja" && "シン・ジュンハ"}
               </a>
             </div>
-            <div className="card-contents-role">Developer</div>
+            <div className="card-contents-role">
+              {language === "en" && "Developer"}
+              {language === "ko" && "개발자"}
+              {language === "ja" && "開発者"}
+            </div>
             <div className="card-contents-number">
               <IoPhonePortrait className="card-contents-icons" />
               <a href="tel:+64212591874">+64-21-205-5088</a>
