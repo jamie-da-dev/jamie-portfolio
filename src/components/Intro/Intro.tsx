@@ -51,13 +51,8 @@ const Intro: React.FC<IntroProps> = ({ language }) => {
           </div>
           <div className="intro-context">
             <div className="intro-quote">
-              {language === "en" && "'SOMETIMES YOU NEVER REALISE"}
-              {language === "ko" && ""}
-              {language === "ja" && ""}
-            </div>
-            <div className="intro-quote">
               {language === "en" &&
-                "THE VALUE OF A MOMENT UNTIL IT BECOMES A MEMORY'"}
+                "'SOMETIMES YOU NEVER REALISE THE VALUE OF A MOMENT UNTIL IT BECOMES A MEMORY'"}
               {language === "ko" && "'내 언어적 한계는 내 세계의 한계다'"}
               {language === "ja" && "'百聞は一見にしかず.'"}
             </div>

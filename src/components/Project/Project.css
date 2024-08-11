@@ -9,7 +9,7 @@
   align-items: center;
   text-align: center;
   position: relative;
-  padding-bottom: 50vh;
+  padding-bottom: 75vh;
   color: white;
   transition: opacity 0.3s ease-in-out;
 }
@@ -52,8 +52,8 @@
 }
 
 .project-overlay.visible::before {
-  width: 30vw;
-  height: 30vw;
+  width: 40vw;
+  height: 40vw;
 }
 
 .project-overlay.bothVisible::before {
@@ -67,7 +67,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 35vw;
+  width: 30vw;
   transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
   z-index: 10;
 }
@@ -86,8 +86,8 @@
 }
 
 .project-item {
-  height: 28vw;
-  width: 28vw;
+  height: 35vw;
+  width: 35vw;
 }
 
 .project-item img {
@@ -108,6 +108,7 @@
   padding: 0 50px;
   font-size: 20px;
   font-family: var(--font-family);
+  word-wrap: break-word;
 }
 
 .project-item-box1-content > * {
@@ -146,4 +147,11 @@
 
 .project-end {
   height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .project-content,
+  .project-overlay {
+    display: none;
+  }
 }

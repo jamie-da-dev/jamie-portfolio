@@ -43,16 +43,20 @@ const Timeline: React.FC<TimelineProps> = ({ imgSrc, date, detail }) => {
       className="timeline-container-row"
       style={{ transform: `translateX(${(1 - scrollRatio) * -30}%)` }}
     >
-      <div className="timeline-container-img-box">
-        <img className="timeline-container-img" src={imgSrc} alt="Event" />
-      </div>
-
-      <div className="timeline-container-context">
-        <div className="timeline-date">
-          <div className="timeline-month">.{month}</div>
-          <div className="timeline-year">{year}</div>
+      <div className="timeline-row">
+        <div className="timeline-container-context">
+          <div className="timeline-date">
+            <div className="timeline-month">{month}</div>
+            <div className="timeline-year">{year}</div>
+          </div>
+          <div className="timeline-container-detail-pc">{detail}</div>
         </div>
-        <div className="timeline-container-detail">{detail}</div>
+        <div className="timeline-container-img-box">
+          <img className="timeline-container-img" src={imgSrc} alt="Event" />
+        </div>
+      </div>
+      <div>
+        <div className="timeline-container-detail-mobile">{detail}</div>
       </div>
     </div>
   );

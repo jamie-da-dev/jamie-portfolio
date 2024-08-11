@@ -3,10 +3,11 @@ import "./Scrollbar.css";
 
 const Scrollbar: React.FC = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isHorizontal, setIsHorizontal] = useState(window.innerWidth <= 768);
 
   const handleScroll = () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const additionalHeight = window.innerHeight / 3; // Added additional height for the Footage component.
+    const additionalHeight = window.innerHeight / 2; // Added additional height for the Footage component.
     const docHeight =
       document.documentElement.scrollHeight -
       window.innerHeight +
@@ -16,10 +17,16 @@ const Scrollbar: React.FC = () => {
     setScrollPosition(scrolled);
   };
 
+  const handleResize = () => {
+    setIsHorizontal(window.innerWidth <= 768);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -27,7 +34,11 @@ const Scrollbar: React.FC = () => {
     <div className="scrollbar-container">
       <div
         className="scrollbar-indicator"
-        style={{ top: `${scrollPosition}%` }}
+        style={
+          isHorizontal
+            ? { left: `${scrollPosition}%` }
+            : { top: `${scrollPosition}%` }
+        }
       />
     </div>
   );

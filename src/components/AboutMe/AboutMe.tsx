@@ -80,11 +80,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ language }) => {
               {language === "ko" && "주소"}
               {language === "ja" && "住所"}
             </div>
-            <div className="aboutme-profile-detail-content">
-              {language === "en" && "AUCKLAND, NEW ZEALAND"}
-              {language === "ko" && "오클랜드, 뉴질랜드"}
-              {language === "ja" && "オークランド、ニュージーランド"}
-            </div>
+            <div className="aboutme-profile-detail-content">AKL, NZ</div>
           </div>
           <div className="aboutme-profile-address">
             <div className="aboutme-profile-detail-title aboutme-profile-detail-last">

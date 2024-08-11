@@ -108,7 +108,7 @@ const Card: React.FC<CardProps> = ({ language }) => {
           <div className="card-contents">
             <div className="card-contents-name">
               <a
-                href="https://www.instagram.com/tls___ha/"
+                href="https://www.linkedin.com/in/jamie-da-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
