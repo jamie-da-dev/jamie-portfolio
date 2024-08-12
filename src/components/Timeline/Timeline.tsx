@@ -10,22 +10,30 @@ interface TimelineProps {
 const Timeline: React.FC<TimelineProps> = ({ imgSrc, date, detail }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [scrollRatio, setScrollRatio] = useState(0);
+  let ticking = false;
 
   const handleScroll = () => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const start = windowHeight;
-      const end = windowHeight / 2;
+    if (!ref.current) return;
 
-      if (rect.top <= start && rect.top >= end) {
-        const ratio = 1 - (rect.top - end) / (start - end);
-        setScrollRatio(ratio);
-      } else if (rect.top < end) {
-        setScrollRatio(1);
-      } else {
-        setScrollRatio(0);
-      }
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const rect = ref.current!.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const start = windowHeight;
+        const end = windowHeight / 2;
+
+        if (rect.top <= start && rect.top >= end) {
+          const ratio = 1 - (rect.top - end) / (start - end);
+          setScrollRatio(ratio);
+        } else if (rect.top < end) {
+          setScrollRatio(1);
+        } else {
+          setScrollRatio(0);
+        }
+        ticking = false;
+      });
+
+      ticking = true;
     }
   };
 
@@ -41,7 +49,7 @@ const Timeline: React.FC<TimelineProps> = ({ imgSrc, date, detail }) => {
     <div
       ref={ref}
       className="timeline-container-row"
-      style={{ transform: `translateX(${(1 - scrollRatio) * -30}%)` }}
+      style={{ transform: `translate3d(${(1 - scrollRatio) * -30}%, 0, 0)` }}
     >
       <div className="timeline-row">
         <div className="timeline-container-context">
