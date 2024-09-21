@@ -10,20 +10,28 @@ import "./App.css";
 
 function App() {
   const [language, setLanguage] = useState<Language>("en");
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const changeLanguage = (lang: Language) => {
     setLanguage(lang);
   };
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <>
       <LanguageSwitcher language={language} onChangeLanguage={changeLanguage} />
       <Scrollbar />
-      <Card language={language} />
+      {!isMobile && <Card language={language} />}
       <Intro language={language} />
       <AboutMe language={language} />
       <Project language={language} />

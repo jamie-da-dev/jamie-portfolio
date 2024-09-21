@@ -144,4 +144,7 @@
   .aboutme-timeline-scroll {
     width: 10%;
   }
+  .aboutme-profile-detail > * {
+    font-size: 17px;
+  }
 }
